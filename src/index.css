@@ -1,1 +1,75 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-red: #DC2626;
+  --color-brand-red-light: #EF4444;
+  --color-brand-red-dark: #B91C1C;
+  --color-brand-black: #0A0A0A;
+  --color-brand-charcoal: #1A1A1A;
+  --color-brand-charcoal-light: #262626;
+  --color-brand-emerald: #10B981;
+  --color-brand-emerald-light: #34D399;
+  --color-brand-white: #FAFAFA;
+  --color-brand-gray: #A3A3A3;
+  --color-brand-gray-dark: #525252;
+  --font-family-heading: "Space Grotesk", sans-serif;
+  --font-family-body: "Inter", sans-serif;
+  --radius-card: 12px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-body);
+  background-color: var(--color-brand-black);
+  color: var(--color-brand-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+}
+
+::selection {
+  background-color: var(--color-brand-red);
+  color: white;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-charcoal-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-gray-dark);
+}
+
+@keyframes aurora-1 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(30px, -50px) scale(1.1) rotate(120deg); }
+  66% { transform: translate(-20px, 20px) scale(0.9) rotate(240deg); }
+}
+
+@keyframes aurora-2 {
+  0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  33% { transform: translate(-40px, 30px) scale(1.15) rotate(-120deg); }
+  66% { transform: translate(25px, -40px) scale(0.85) rotate(-240deg); }
+}
+
+.aurora-blob-1 {
+  animation: aurora-1 15s ease-in-out infinite;
+}
+
+.aurora-blob-2 {
+  animation: aurora-2 18s ease-in-out infinite;
+}
+
