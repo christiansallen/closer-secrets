@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Phone, Mail, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -71,19 +70,9 @@ export default function Footer() {
             <h4 className="font-heading font-semibold text-sm uppercase tracking-wider text-brand-gray-dark mb-4">
               Get in Touch
             </h4>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-sm text-brand-gray">
-                <Mail className="w-4 h-4 text-brand-red" />
-                info@closersecrets.com
-              </li>
-              <li className="flex items-center gap-2 text-sm text-brand-gray">
-                <Phone className="w-4 h-4 text-brand-red" />
-                Schedule a Call
-              </li>
-            </ul>
             <Link
               to="/contact#inquiry"
-              className="mt-6 inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-light text-white text-sm font-semibold px-5 py-2.5 rounded-[var(--radius-card)] transition-all duration-200 cursor-pointer"
+              className="mt-2 inline-flex items-center gap-2 bg-brand-red hover:bg-brand-red-light text-white text-sm font-semibold px-5 py-2.5 rounded-[var(--radius-card)] transition-all duration-200 cursor-pointer"
             >
               Get Started
             </Link>
@@ -95,12 +84,12 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Closer Secrets. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <a href="#" className="text-xs text-brand-gray-dark hover:text-brand-gray transition-colors cursor-pointer">
+            <Link to="/privacy" className="text-xs text-brand-gray-dark hover:text-brand-gray transition-colors cursor-pointer">
               Privacy Policy
-            </a>
-            <a href="#" className="text-xs text-brand-gray-dark hover:text-brand-gray transition-colors cursor-pointer">
+            </Link>
+            <Link to="/terms" className="text-xs text-brand-gray-dark hover:text-brand-gray transition-colors cursor-pointer">
               Terms of Service
-            </a>
+            </Link>
           </div>
         </div>
       </div>

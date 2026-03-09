@@ -1,19 +1,16 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Play, ArrowLeft, Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
-import TestimonialCard from "../components/TestimonialCard";
-import AnimatedCounter from "../components/AnimatedCounter";
 import WistiaVideo from "../components/WistiaVideo";
-import { featuredLeaders, videoTestimonials, stats } from "../data/testimonials";
+import { featuredLeaders, videoTestimonials } from "../data/testimonials";
 
 export default function WallOfLove() {
   return (
     <main>
       <WallHero />
-      <StatsStrip />
       <VideoTestimonialsSection />
-      <WrittenTestimonialsSection />
+      <EndorsedByGrid />
       <CTABanner />
     </main>
   );
@@ -21,7 +18,7 @@ export default function WallOfLove() {
 
 function WallHero() {
   return (
-    <section className="relative pt-32 pb-16 lg:pt-40 lg:pb-20 bg-brand-black overflow-hidden">
+    <section className="relative pt-32 pb-10 lg:pt-40 lg:pb-14 bg-brand-black overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(220,38,38,0.1),transparent_50%)]" />
       <div
         className="absolute inset-0 opacity-[0.02]"
@@ -38,14 +35,6 @@ function WallHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <Link
-            to="/"
-            className="inline-flex items-center gap-1 text-brand-gray hover:text-white text-sm font-medium transition-colors mb-8 cursor-pointer"
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Home
-          </Link>
-
           <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 text-brand-red text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-wider">
             <span className="w-1.5 h-1.5 bg-brand-red rounded-full animate-pulse" />
             Wall of Love
@@ -67,36 +56,11 @@ function WallHero() {
   );
 }
 
-function StatsStrip() {
-  return (
-    <section className="py-12 border-y border-white/5 bg-brand-charcoal/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-          {stats.map((stat) => (
-            <AnimatedCounter
-              key={stat.label}
-              value={stat.value}
-              prefix={stat.prefix || ""}
-              suffix={stat.suffix || ""}
-              label={stat.label}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function VideoTestimonialsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-brand-black">
+    <section className="pb-20 lg:pb-28 bg-brand-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          badge="Video Testimonials"
-          title="Hear It In Their Own Words"
-          subtitle="Watch video testimonials from our clients sharing their experience working with Closer Secrets."
-        />
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {videoTestimonials.map((video, i) => (
             <motion.div
@@ -128,52 +92,37 @@ function VideoTestimonialsSection() {
   );
 }
 
-function WrittenTestimonialsSection() {
+function EndorsedByGrid() {
   return (
     <section className="py-20 lg:py-28 bg-brand-charcoal/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="Written Testimonials"
-          title="What Industry Leaders Say"
-          subtitle="Read detailed testimonials from leaders who've experienced the Closer Secrets difference."
+          badge="Endorsed By"
+          title="Trusted by Industry Leaders"
+          subtitle="Some of the biggest names in online business, coaching, and digital marketing."
         />
 
-        {/* Masonry-style grid */}
-        <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
           {featuredLeaders.map((leader, i) => (
             <motion.div
               key={leader.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
-              className="break-inside-avoid bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] p-6 hover:border-brand-red/20 transition-all duration-300"
+              transition={{ duration: 0.4, delay: i * 0.05 }}
+              className="group flex flex-col items-center text-center"
             >
-              {leader.metric && (
-                <div className="inline-flex items-center gap-1.5 bg-brand-emerald/10 border border-brand-emerald/20 text-brand-emerald text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                  <span className="w-1.5 h-1.5 bg-brand-emerald rounded-full" />
-                  {leader.metric}
-                </div>
-              )}
-
-              <Quote className="w-5 h-5 text-brand-red/40 mb-3" />
-
-              <blockquote className="text-sm lg:text-base text-brand-gray leading-relaxed mb-6">
-                &ldquo;{leader.quote}&rdquo;
-              </blockquote>
-
-              <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+              <div className="relative mb-3">
+                <div className="absolute -inset-1 bg-brand-red/0 group-hover:bg-brand-red/20 rounded-full transition-all duration-300 blur-md" />
                 <img
                   src={leader.image}
                   alt={leader.name}
-                  className="w-10 h-10 rounded-full object-cover ring-2 ring-white/10"
+                  className="relative w-20 h-20 lg:w-24 lg:h-24 rounded-full object-cover ring-2 ring-white/10 group-hover:ring-brand-red/30 transition-all duration-300 grayscale group-hover:grayscale-0"
                   loading="lazy"
                 />
-                <div>
-                  <p className="text-sm font-semibold text-white">{leader.name}</p>
-                  <p className="text-xs text-brand-gray-dark">{leader.title}</p>
-                </div>
               </div>
+              <p className="text-sm font-semibold text-white">{leader.name}</p>
+              <p className="text-[11px] text-brand-gray-dark leading-tight mt-0.5">{leader.title}</p>
             </motion.div>
           ))}
         </div>
@@ -181,6 +130,7 @@ function WrittenTestimonialsSection() {
     </section>
   );
 }
+
 
 function CTABanner() {
   return (

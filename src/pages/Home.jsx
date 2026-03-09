@@ -12,7 +12,6 @@ import {
   Zap,
   BarChart3,
 } from "lucide-react";
-import TestimonialCard from "../components/TestimonialCard";
 import TestimonialMarquee from "../components/TestimonialMarquee";
 import MetricCard from "../components/MetricCard";
 import SectionHeading from "../components/SectionHeading";
@@ -25,7 +24,6 @@ export default function Home() {
       <HeroSection />
       <TrustedBySection />
       <ServicesSection />
-      <BentoTestimonials />
       <TransformationSection />
       <WallOfLovePreview />
       <CTASection />
@@ -96,11 +94,6 @@ function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <div className="inline-flex items-center gap-2 bg-brand-red/10 border border-brand-red/20 text-brand-red text-xs font-semibold px-3 py-1.5 rounded-full mb-6 uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 bg-brand-red rounded-full animate-pulse" />
-              Trusted by 50+ Industry Leaders
-            </div>
-
             <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl tracking-tight leading-[1.1]">
               <BlurRevealText text="Build" delay={0.3} />
               <motion.span
@@ -115,7 +108,7 @@ function HeroSection() {
             </h1>
 
             <p className="mt-6 text-lg lg:text-xl text-brand-gray leading-relaxed max-w-lg">
-              Years of experience, proven systems, and a commitment to
+              50+ years of combined experience, proven systems, and a commitment to
               excellence. We transform businesses by building high-impact sales
               departments.
             </p>
@@ -186,19 +179,19 @@ function HeroSection() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex gap-3 mt-4"
+              className="grid grid-cols-2 sm:grid-cols-3 gap-3 mt-4"
             >
-              <div className="bg-brand-charcoal border border-white/10 rounded-[var(--radius-card)] px-4 py-3 flex-1">
-                <p className="text-brand-emerald font-heading font-bold text-lg">$150M+</p>
+              <div className="bg-brand-charcoal border border-white/10 rounded-[var(--radius-card)] px-3 sm:px-4 py-3">
+                <p className="text-brand-emerald font-heading font-bold text-base sm:text-lg">$150M+</p>
                 <p className="text-[10px] text-brand-gray-dark uppercase tracking-wider">Revenue Generated</p>
               </div>
-              <div className="bg-brand-charcoal border border-white/10 rounded-[var(--radius-card)] px-4 py-3 flex-1">
-                <p className="text-brand-emerald font-heading font-bold text-lg">24/7</p>
+              <div className="bg-brand-charcoal border border-white/10 rounded-[var(--radius-card)] px-3 sm:px-4 py-3">
+                <p className="text-brand-emerald font-heading font-bold text-base sm:text-lg">24/7</p>
                 <p className="text-[10px] text-brand-gray-dark uppercase tracking-wider">Live Analytics & Reporting</p>
               </div>
-              <div className="bg-brand-charcoal border border-white/10 rounded-[var(--radius-card)] px-4 py-3 flex-1">
-                <p className="text-brand-emerald font-heading font-bold text-lg">200+</p>
-                <p className="text-[10px] text-brand-gray-dark uppercase tracking-wider">Closers Placed</p>
+              <div className="bg-brand-charcoal border border-white/10 rounded-[var(--radius-card)] px-3 sm:px-4 py-3 col-span-2 sm:col-span-1">
+                <p className="text-brand-emerald font-heading font-bold text-base sm:text-lg">200+</p>
+                <p className="text-[10px] text-brand-gray-dark uppercase tracking-wider">Sales Professionals Managed</p>
               </div>
             </motion.div>
           </motion.div>
@@ -211,26 +204,38 @@ function HeroSection() {
 
 function TrustedBySection() {
   return (
-    <section className="py-16 lg:py-20 bg-brand-black">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-xs uppercase tracking-[0.2em] text-brand-gray-dark font-medium mb-10">
-          Trusted by Industry Leaders
-        </p>
-        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
-          {featuredLeaders.slice(0, 7).map((leader) => (
-            <div key={leader.name} className="flex items-center gap-2.5 opacity-40 hover:opacity-80 transition-opacity duration-300">
+    <section className="py-16 lg:py-20 bg-brand-black overflow-hidden">
+      <p className="text-center text-xs uppercase tracking-[0.2em] text-brand-gray-dark font-medium mb-10">
+        Endorsed by Industry Leaders
+      </p>
+
+      <div className="relative">
+        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-brand-black to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-brand-black to-transparent z-10" />
+
+        <motion.div
+          className="flex gap-8 w-max"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+        >
+          {[...featuredLeaders, ...featuredLeaders].map((leader, i) => (
+            <div
+              key={`${leader.name}-${i}`}
+              className="flex items-center gap-4 bg-brand-charcoal/50 border border-white/5 rounded-full pl-1.5 pr-6 py-1.5 shrink-0 hover:border-brand-red/20 transition-all duration-300"
+            >
               <img
                 src={leader.image}
                 alt={leader.name}
-                className="w-8 h-8 rounded-full object-cover grayscale"
+                className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
                 loading="lazy"
               />
-              <span className="text-sm text-brand-gray font-medium whitespace-nowrap">
-                {leader.name}
-              </span>
+              <div>
+                <p className="text-sm font-semibold text-white whitespace-nowrap">{leader.name}</p>
+                <p className="text-[11px] text-brand-gray-dark whitespace-nowrap">{leader.title}</p>
+              </div>
             </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -262,7 +267,7 @@ function ServicesSection() {
     <section className="py-20 lg:py-28 bg-brand-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          badge="What We Do"
+          badge="Our Playbook"
           title="Accelerate Your Sales Team's Performance"
           subtitle="Partner with industry experts to design, build, and scale your high-performing sales department."
         />
@@ -294,22 +299,22 @@ function ServicesSection() {
                 revenue for our clients.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4">
               {[
-                { icon: Shield, label: "Vetted Closers", value: "200+" },
+                { icon: Shield, label: "Sales Professionals Managed", value: "200+" },
                 { icon: Zap, label: "Avg Ramp Time", value: "14 days" },
                 { icon: BarChart3, label: "Close Rate", value: "34%" },
                 { icon: Award, label: "Live Reporting", value: "24/7" },
               ].map((item) => (
                 <div
                   key={item.label}
-                  className="bg-brand-black/50 border border-white/5 rounded-[var(--radius-card)] p-4 text-center"
+                  className="bg-brand-black/50 border border-white/5 rounded-[var(--radius-card)] p-3 sm:p-4 text-center"
                 >
-                  <item.icon className="w-5 h-5 text-brand-red mx-auto mb-2" />
-                  <p className="font-heading font-bold text-lg text-brand-emerald">
+                  <item.icon className="w-4 h-4 sm:w-5 sm:h-5 text-brand-red mx-auto mb-1.5 sm:mb-2" />
+                  <p className="font-heading font-bold text-base sm:text-lg text-brand-emerald">
                     {item.value}
                   </p>
-                  <p className="text-[10px] text-brand-gray-dark uppercase tracking-wider mt-1">
+                  <p className="text-[9px] sm:text-[10px] text-brand-gray-dark uppercase tracking-wider mt-1">
                     {item.label}
                   </p>
                 </div>
@@ -322,76 +327,6 @@ function ServicesSection() {
   );
 }
 
-function BentoTestimonials() {
-  const featured = featuredLeaders.slice(0, 6);
-
-  return (
-    <section className="py-20 lg:py-28 bg-brand-charcoal/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          badge="Social Proof"
-          title="High-Performing Sales Teams Delivering Results"
-          subtitle="See what industry leaders say about working with Closer Secrets."
-        />
-
-        {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {/* Featured large card */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="md:col-span-2 lg:col-span-2 bg-gradient-to-br from-brand-red/10 via-brand-charcoal to-brand-charcoal border border-brand-red/10 rounded-2xl p-8 lg:p-10 relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 rounded-full blur-3xl" />
-            <div className="relative">
-              <div className="inline-flex items-center gap-1.5 bg-brand-emerald/10 border border-brand-emerald/20 text-brand-emerald text-xs font-semibold px-3 py-1 rounded-full mb-4">
-                <span className="w-1.5 h-1.5 bg-brand-emerald rounded-full" />
-                {featured[0].metric}
-              </div>
-              <blockquote className="text-xl lg:text-2xl text-white font-medium leading-relaxed mb-6 max-w-lg">
-                &ldquo;{featured[0].quote}&rdquo;
-              </blockquote>
-              <div className="flex items-center gap-3">
-                <img
-                  src={featured[0].image}
-                  alt={featured[0].name}
-                  className="w-12 h-12 rounded-full object-cover ring-2 ring-brand-red/30"
-                  loading="lazy"
-                />
-                <div>
-                  <p className="font-semibold text-white">{featured[0].name}</p>
-                  <p className="text-sm text-brand-gray">{featured[0].title}</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Side cards */}
-          {featured.slice(1, 3).map((t, i) => (
-            <TestimonialCard key={t.name} testimonial={t} index={i} />
-          ))}
-
-          {/* Bottom row */}
-          {featured.slice(3, 6).map((t, i) => (
-            <TestimonialCard key={t.name} testimonial={t} index={i + 2} />
-          ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            to="/testimonials"
-            className="inline-flex items-center gap-2 text-brand-red hover:text-brand-red-light font-semibold transition-colors duration-200 cursor-pointer"
-          >
-            View All Testimonials
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function TransformationSection() {
   return (
@@ -400,7 +335,7 @@ function TransformationSection() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <SectionHeading
-              badge="The Process"
+              badge="Game Plan"
               title="From Hiring Headaches to a Scalable Sales Machine"
               subtitle="Most businesses struggle with inconsistent sales. We fix that with a proven 3-step system."
               align="left"

@@ -322,7 +322,7 @@ function ApplicationSection() {
                   id="firstName"
                   name="firstName"
                   required
-                  className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
+                  className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3.5 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
                   placeholder="John"
                 />
               </div>
@@ -338,7 +338,7 @@ function ApplicationSection() {
                   id="lastName"
                   name="lastName"
                   required
-                  className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
+                  className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3.5 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
                   placeholder="Doe"
                 />
               </div>
@@ -356,7 +356,7 @@ function ApplicationSection() {
                 id="email"
                 name="email"
                 required
-                className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
+                className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3.5 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
                 placeholder="john@example.com"
               />
             </div>
@@ -373,7 +373,7 @@ function ApplicationSection() {
                 id="phone"
                 name="phone"
                 required
-                className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
+                className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3.5 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
                 placeholder="(555) 123-4567"
               />
             </div>
@@ -389,7 +389,7 @@ function ApplicationSection() {
                 id="experience"
                 name="experience"
                 rows={4}
-                className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors resize-none"
+                className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3.5 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors resize-none"
                 placeholder="Tell us about your sales background, experience closing high-ticket offers, and why you want to join Closer Secrets..."
               />
             </div>
@@ -407,7 +407,7 @@ function ApplicationSection() {
                   type="url"
                   id="resumeLink"
                   name="resumeLink"
-                  className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] pl-10 pr-4 py-3 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
+                  className="w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] pl-10 pr-4 py-3.5 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors"
                   placeholder="Google Drive, Dropbox, or LinkedIn URL"
                 />
               </div>

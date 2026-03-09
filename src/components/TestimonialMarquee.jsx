@@ -4,7 +4,7 @@ import { Quote } from "lucide-react";
 
 function MarqueeColumn({ testimonials, duration = 20, reverse = false }) {
   return (
-    <div className="flex flex-col overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] h-[600px]">
+    <div className="flex flex-col overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)] h-[400px] sm:h-[500px] lg:h-[600px]">
       <motion.div
         animate={{ translateY: reverse ? "0%" : "-50%" }}
         transition={{
@@ -18,7 +18,7 @@ function MarqueeColumn({ testimonials, duration = 20, reverse = false }) {
         {[...testimonials, ...testimonials].map((t, i) => (
           <div
             key={`${t.name}-${i}`}
-            className="bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] p-5 max-w-xs hover:border-brand-red/20 transition-colors duration-200"
+            className="bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] p-4 sm:p-5 w-[260px] sm:w-[300px] max-w-xs hover:border-brand-red/20 transition-colors duration-200"
           >
             <p className="text-[10px] text-brand-red font-semibold uppercase tracking-wider mb-2">
               {t.business}

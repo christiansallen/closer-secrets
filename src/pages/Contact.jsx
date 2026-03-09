@@ -137,10 +137,10 @@ function ContactMethodsSection() {
 const APPS_SCRIPT_URL = import.meta.env.VITE_APPS_SCRIPT_URL || "";
 
 const inputClass =
-  "w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors";
+  "w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3.5 text-white text-sm placeholder-brand-gray-dark focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors";
 
 const selectClass =
-  "w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3 text-white text-sm focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors appearance-none cursor-pointer";
+  "w-full bg-brand-black border border-white/10 rounded-[var(--radius-card)] px-4 py-3.5 text-white text-sm focus:outline-none focus:border-brand-red/50 focus:ring-1 focus:ring-brand-red/50 transition-colors appearance-none cursor-pointer";
 
 function ContactFormSection() {
   const [submitted, setSubmitted] = useState(false);

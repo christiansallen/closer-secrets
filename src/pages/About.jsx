@@ -148,9 +148,9 @@ function AboutHero() {
         >
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {[
-              { value: "20+", label: "Years Combined Experience" },
+              { value: "50+", label: "Years Combined Experience" },
               { value: "$150M+", label: "Revenue Generated" },
-              { value: "100+", label: "Sales Professionals Managed" },
+              { value: "200+", label: "Sales Professionals Managed" },
             ].map((stat) => (
               <div key={stat.label}>
                 <p className="font-heading font-bold text-3xl text-brand-emerald">
