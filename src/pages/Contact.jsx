@@ -6,7 +6,6 @@ import {
   ArrowRight,
   Mail,
   MessageSquare,
-  Clock,
   CheckCircle,
   Send,
   Building2,
@@ -32,11 +31,11 @@ const contactMethods = [
     href: "mailto:info@closersecrets.com",
   },
   {
-    icon: Clock,
-    title: "Business Hours",
-    description: "Monday - Friday, 9:00 AM - 6:00 PM EST. We're always here for our clients.",
-    action: null,
-    href: null,
+    icon: Users,
+    title: "Connect with Us",
+    description: "Follow us on Facebook to stay up to date with Closer Secrets news, tips, and updates.",
+    action: "Follow Us on Facebook",
+    href: "https://www.facebook.com/closersecrets",
   },
 ];
 

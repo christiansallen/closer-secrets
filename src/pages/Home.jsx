@@ -7,7 +7,6 @@ import {
   TrendingUp,
   Award,
   ChevronRight,
-  Play,
   Shield,
   Zap,
   BarChart3,
@@ -16,7 +15,7 @@ import TestimonialMarquee from "../components/TestimonialMarquee";
 import MetricCard from "../components/MetricCard";
 import SectionHeading from "../components/SectionHeading";
 import WistiaVideo from "../components/WistiaVideo";
-import { featuredLeaders, videoTestimonials } from "../data/testimonials";
+import { featuredLeaders } from "../data/testimonials";
 
 export default function Home() {
   return (
@@ -25,7 +24,6 @@ export default function Home() {
       <TrustedBySection />
       <ServicesSection />
       <TransformationSection />
-      <WallOfLovePreview />
       <CTASection />
     </main>
   );
@@ -109,8 +107,9 @@ function HeroSection() {
 
             <p className="mt-6 text-lg lg:text-xl text-brand-gray leading-relaxed max-w-lg">
               50+ years of combined experience, proven systems, and a commitment to
-              excellence. We transform businesses by building high-impact sales
-              departments.
+              excellence. We&apos;re dedicated to helping companies in the health and
+              wellness space grow by building high-impact sales departments that
+              drive real results.
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
@@ -122,10 +121,10 @@ function HeroSection() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
               <Link
-                to="/testimonials"
+                to="/about"
                 className="inline-flex items-center gap-2 text-brand-gray hover:text-white font-medium transition-colors duration-200 cursor-pointer text-base"
               >
-                See Our Results
+                Learn More
                 <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
@@ -269,7 +268,7 @@ function ServicesSection() {
         <SectionHeading
           badge="Our Playbook"
           title="Accelerate Your Sales Team's Performance"
-          subtitle="Partner with industry experts to design, build, and scale your high-performing sales department."
+          subtitle="We partner with health and wellness brands to design, build, and scale high-performing sales departments that fuel lasting growth."
         />
 
         <div className="grid md:grid-cols-3 gap-6">
@@ -393,52 +392,6 @@ function TransformationSection() {
   );
 }
 
-function WallOfLovePreview() {
-  return (
-    <section className="py-20 lg:py-28 bg-brand-charcoal/30 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading
-          badge="Wall of Love"
-          title="Hear It Directly From Our Clients"
-          subtitle="Real video testimonials from industry leaders who've transformed their sales operations with us."
-        />
-
-        {/* Video Testimonial Grid — first 6 with real Wistia embeds */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videoTestimonials.slice(0, 6).map((video, i) => (
-            <motion.div
-              key={video.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] overflow-hidden hover:border-brand-red/20 transition-all duration-300"
-            >
-              <div className="aspect-video">
-                <WistiaVideo videoId={video.id} className="w-full h-full" />
-              </div>
-              <div className="p-3">
-                <p className="text-white font-semibold text-sm">{video.name}</p>
-                <p className="text-brand-gray-dark text-xs">{video.business}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <Link
-            to="/testimonials"
-            className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-semibold px-6 py-3 rounded-[var(--radius-card)] transition-all duration-200 cursor-pointer"
-          >
-            See All Video Testimonials
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function CTASection() {
   return (
     <section className="py-20 lg:py-28 bg-brand-black relative overflow-hidden">
@@ -455,8 +408,8 @@ function CTASection() {
             <span className="text-brand-red">Elite Sales Team?</span>
           </h2>
           <p className="text-lg text-brand-gray leading-relaxed mb-8 max-w-xl mx-auto">
-            Tell us about your business and discover how we can help you
-            recruit, train, and scale a world-class sales department.
+            Tell us about your health and wellness business and discover how we
+            can help you recruit, train, and scale a world-class sales department.
           </p>
           <Link
             to="/contact#inquiry"

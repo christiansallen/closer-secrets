@@ -15,8 +15,8 @@ export default function Footer() {
               />
             </div>
             <p className="text-brand-gray text-sm leading-relaxed">
-              We design, build, and scale high-performing sales departments for
-              industry leaders in the high-ticket space.
+              We design, build, and scale high-performing sales departments,
+              helping companies in the health and wellness space grow and thrive.
             </p>
           </div>
 
@@ -29,7 +29,6 @@ export default function Footer() {
               {[
                 { label: "Home", path: "/" },
                 { label: "About Us", path: "/about" },
-                { label: "Testimonials", path: "/testimonials" },
                 { label: "Careers", path: "/careers" },
                 { label: "Contact", path: "/contact" },
               ].map((link) => (

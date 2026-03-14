@@ -41,7 +41,7 @@ const team = [
     name: "Val Ledezma",
     role: "Director of Compliance",
     image: "/team/val-ledezma.jpg",
-    imagePosition: "center top",
+    imagePosition: "center 25%",
     bio: "With over five years in the industry, trained by a top attorney in the field. Audits calls for accuracy across the sales floor, ensuring communication upholds the highest standards of integrity and precision. Committed to staying current with FTC developments and regulatory compliance through continuous education on current cases.",
     highlights: ["FTC Compliance", "5+ Years Industry"],
   },
@@ -58,6 +58,37 @@ const team = [
     image: "/team/marysol-cecena.jpg",
     bio: "Brings 11 years in administration within sales, covering roles in customer service, contracts, project direction, loan verification, and audits. Skilled in creating and analyzing corporate reports and tracking KPIs. Naturally curious with a focus on professional and personal growth, she provides operational support to streamline sales operations.",
     highlights: ["11 Years Experience", "KPI Analytics"],
+  },
+  {
+    name: "Nicole Olazabal",
+    role: "Sales Leadership & Strategy",
+    image: "/team/nicole-olazabal.jpg",
+    imagePosition: "center 25%",
+    bio: "Based in North Texas, Nicole is passionate about leadership, growth, and helping people reach their full potential. She holds a Bachelor's in Business Technology Management and a Human Resources Certificate, and is currently pursuing her Master's in Organizational Leadership. At Closer Secrets, she focuses on connecting with and supporting the growth of sales professionals while partnering with top-tier clients on overall sales strategy — working closely with cross-functional teams to ensure alignment and drive meaningful impact.",
+    highlights: ["Organizational Leadership", "HR Certified"],
+  },
+  {
+    name: "Larlin Neumann",
+    role: "Client Retention & Experience",
+    image: "/team/larlin-neumann.jpg",
+    imagePosition: "center 35%",
+    bio: "Larlin brings over a decade of experience in client success, marketing, and business operations. Known for turning complex situations into clear, actionable strategies, she has worked with thousands of entrepreneurs through digital marketing platforms and client support systems. At Closer Secrets, she focuses on client retention and experience — identifying concerns, resolving barriers, and strengthening the relationship between clients and the programs they commit to. Based in Grand Rapids, Minnesota with her husband Dru, she is a mother of six and a proud grandmother.",
+    highlights: ["10+ Years Experience", "Client Success"],
+  },
+  {
+    name: "Fei Villar",
+    role: "Business Intelligence & Analytics",
+    image: "/team/fei-villar.jpg",
+    bio: "Originally from Cagayan Valley, Philippines, Fei studied at Brigham Young University — Hawaii, where she developed a strong foundation in research and data analysis. At Closer Secrets, she specializes in business intelligence and analytics, helping clients make sense of complex information so they can focus on the bigger priorities that drive their business forward. She excels at turning data into clear, actionable insights that make decision-making easier and more impactful.",
+    highlights: ["Business Intelligence", "Data Analytics"],
+  },
+  {
+    name: "Perlie Tamon",
+    role: "Administrative Support",
+    image: "/team/perlie-tamon.jpg",
+    imagePosition: "center 40%",
+    bio: "Based in Cavite, Philippines, Perlie holds a Bachelor of Science in Business Management with a major in Marketing. She is passionate about staying organized, supporting team operations, and ensuring things run smoothly behind the scenes. In her role, she assists with retrieving agent availability, handling activation requests, and keeping important data organized and up to date — helping the team focus on delivering great results.",
+    highlights: ["Business Management", "Operations Support"],
   },
 ];
 
@@ -135,7 +166,9 @@ function AboutHero() {
 
           <p className="mt-6 text-lg text-brand-gray leading-relaxed max-w-xl mx-auto">
             At Closer Secrets, we believe in more than just sales — we believe
-            in trust, transparency, and transforming businesses.
+            in trust, transparency, and transforming businesses. We&apos;re
+            committed to helping companies in the health and wellness space grow
+            by connecting them with elite sales talent and proven systems.
           </p>
         </motion.div>
 
@@ -173,7 +206,7 @@ function GOATSection() {
         <SectionHeading
           badge="Our Values"
           title="The Closer Secrets Way — G.O.A.T. Ethos"
-          subtitle="Closer Secrets isn't just a sales organization — it's a movement. We lead with integrity, operate with excellence, and build sales teams that create real impact."
+          subtitle="Closer Secrets isn't just a sales organization — it's a movement. We lead with integrity, operate with excellence, and build sales teams that help health and wellness companies create real impact and lasting growth."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
