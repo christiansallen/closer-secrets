@@ -27,8 +27,8 @@ const team = [
     role: "Managing Partner",
     image: "/team/deborah-burris.jpg",
     imagePosition: "center 25%",
-    bio: "Over 30 years of professional sales, team leadership, and strategic consulting experience. She spent six years in pharmaceutical industry roles, including positions with organizations acquired by Pfizer. Since joining Closer Secrets in 2017, she's led over 100 high-performing sales professionals generating over $60 million in annual revenue. Co-author of The Ultimate Playbook for High Performing Sales Teams and a frequent speaker at industry events. Holds a Bachelor's in Economics from BYU, an MBA, and professional certifications in sales training and leadership coaching.",
-    highlights: ["$60M Annual Revenue", "BYU / MBA"],
+    bio: "Managing Partner of Closer Secrets and a seasoned sales executive with more than 30 years of experience building and leading high-performing revenue teams. Since joining the firm in 2017, she has helped scale the organization into a leader in high-ticket sales, overseeing a team of more than 150 sales professionals who have generated hundreds of millions in revenue for leading brands. Earlier in her career, Deborah held leadership roles in the pharmaceutical industry with organizations later acquired by Pfizer. She is co-author of The Ultimate Playbook for High Performing Sales Teams and is currently completing the Harvard Business School Owner/President Management Program (OPM65).",
+    highlights: ["30+ Years Sales Leadership", "Harvard Business School OPM"],
   },
   {
     name: "Valerie Grizzle",
@@ -36,6 +36,14 @@ const team = [
     image: "/team/valerie-grizzle.jpg",
     bio: "A problem-solver and former Micron Corporation contributor who developed the original Closer Secrets Lead Tracker System — the first of its kind to give closers a simple way to make notes, resolve leads and have visibility to commissions. The system enables real-time business profitability analysis. Known for strong work ethic and attention to detail. Former Boise State University basketball player.",
     highlights: ["Lead Tracker Creator", "Micron Corporation"],
+  },
+  {
+    name: "Nicole Olazabal",
+    role: "Operational Leadership",
+    image: "/team/nicole-olazabal.jpg",
+    imagePosition: "center 25%",
+    bio: "Based in North Texas, Nicole is passionate about leadership, growth, and helping people reach their full potential. She holds a Bachelor's in Business Technology Management and a Human Resources Certificate, and is currently pursuing her Master's in Organizational Leadership. At Closer Secrets, she focuses on connecting with and supporting the growth of sales professionals while partnering with top-tier clients on overall sales strategy — working closely with cross-functional teams to ensure alignment and drive meaningful impact.",
+    highlights: ["Organizational Leadership", "HR Certified"],
   },
   {
     name: "Val Ledezma",
@@ -58,14 +66,6 @@ const team = [
     image: "/team/marysol-cecena.jpg",
     bio: "Brings 11 years in administration within sales, covering roles in customer service, contracts, project direction, loan verification, and audits. Skilled in creating and analyzing corporate reports and tracking KPIs. Naturally curious with a focus on professional and personal growth, she provides operational support to streamline sales operations.",
     highlights: ["11 Years Experience", "KPI Analytics"],
-  },
-  {
-    name: "Nicole Olazabal",
-    role: "Sales Leadership & Strategy",
-    image: "/team/nicole-olazabal.jpg",
-    imagePosition: "center 25%",
-    bio: "Based in North Texas, Nicole is passionate about leadership, growth, and helping people reach their full potential. She holds a Bachelor's in Business Technology Management and a Human Resources Certificate, and is currently pursuing her Master's in Organizational Leadership. At Closer Secrets, she focuses on connecting with and supporting the growth of sales professionals while partnering with top-tier clients on overall sales strategy — working closely with cross-functional teams to ensure alignment and drive meaningful impact.",
-    highlights: ["Organizational Leadership", "HR Certified"],
   },
   {
     name: "Larlin Neumann",
