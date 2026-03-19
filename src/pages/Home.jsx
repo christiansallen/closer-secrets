@@ -21,7 +21,6 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <TrustedBySection />
       <ServicesSection />
       <TransformationSection />
       <CTASection />
@@ -201,44 +200,6 @@ function HeroSection() {
 }
 
 
-function TrustedBySection() {
-  return (
-    <section className="py-16 lg:py-20 bg-brand-black overflow-hidden">
-      <p className="text-center text-xs uppercase tracking-[0.2em] text-brand-gray-dark font-medium mb-10">
-        Endorsed by Industry Leaders
-      </p>
-
-      <div className="relative">
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-brand-black to-transparent z-10" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-brand-black to-transparent z-10" />
-
-        <motion.div
-          className="flex gap-8 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 30, ease: "linear", repeat: Infinity }}
-        >
-          {[...featuredLeaders, ...featuredLeaders].map((leader, i) => (
-            <div
-              key={`${leader.name}-${i}`}
-              className="flex items-center gap-4 bg-brand-charcoal/50 border border-white/5 rounded-full pl-1.5 pr-6 py-1.5 shrink-0 hover:border-brand-red/20 transition-all duration-300"
-            >
-              <img
-                src={leader.image}
-                alt={leader.name}
-                className="w-12 h-12 rounded-full object-cover ring-2 ring-white/10"
-                loading="lazy"
-              />
-              <div>
-                <p className="text-sm font-semibold text-white whitespace-nowrap">{leader.name}</p>
-                <p className="text-[11px] text-brand-gray-dark whitespace-nowrap">{leader.title}</p>
-              </div>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
-  );
-}
 
 function ServicesSection() {
   const services = [

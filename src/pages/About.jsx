@@ -62,9 +62,9 @@ const team = [
   },
   {
     name: "Marysol Cecena",
-    role: "Administrative Assistant",
+    role: "Data Intelligence Specialist",
     image: "/team/marysol-cecena.jpg",
-    bio: "Brings 11 years in administration within sales, covering roles in customer service, contracts, project direction, loan verification, and audits. Skilled in creating and analyzing corporate reports and tracking KPIs. Naturally curious with a focus on professional and personal growth, she provides operational support to streamline sales operations.",
+    bio: "Brings over 11 years of experience supporting sales organizations across administration, customer service, contracts, project coordination, loan verification, and auditing. As a Data Intelligence Specialist at Closer Secrets, she develops and analyzes corporate reports, tracks key performance indicators, and supports CRM systems and funnel automations that help leadership make informed business decisions. Known for her analytical mindset and curiosity, she helps transform operational data into clear insights that improve sales performance and efficiency.",
     highlights: ["11 Years Experience", "KPI Analytics"],
   },
   {
