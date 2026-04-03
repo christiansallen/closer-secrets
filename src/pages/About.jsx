@@ -28,7 +28,7 @@ const team = [
     image: "/team/deborah-burris.jpg",
     imagePosition: "center 25%",
     bio: "Managing Partner of Closer Secrets and a seasoned sales executive with more than 30 years of experience building and leading high-performing revenue teams. Since joining the firm in 2017, she has helped scale the organization into a leader in high-ticket sales, overseeing a team of more than 150 sales professionals who have generated hundreds of millions in revenue for leading brands. Earlier in her career, Deborah held leadership roles in the pharmaceutical industry with organizations later acquired by Pfizer. She is co-author of The Ultimate Playbook for High Performing Sales Teams and is currently completing the Harvard Business School Owner/President Management Program (OPM65).",
-    highlights: ["30+ Years Sales Leadership", "Harvard Business School OPM"],
+    highlights: ["30 Years Strategic Leadership", "Harvard Business School OPM"],
   },
   {
     name: "Valerie Grizzle",
@@ -36,6 +36,14 @@ const team = [
     image: "/team/valerie-grizzle.jpg",
     bio: "A problem-solver and former Micron Corporation contributor who developed the original Closer Secrets Lead Tracker System — the first of its kind to give closers a simple way to make notes, resolve leads and have visibility to commissions. The system enables real-time business profitability analysis. Known for strong work ethic and attention to detail. Former Boise State University basketball player.",
     highlights: ["Lead Tracker Creator", "Micron Corporation"],
+  },
+  {
+    name: "Trina Skan",
+    role: "Chief Sales Officer",
+    image: "/team/trina-skan.jpg",
+    imagePosition: "center 20%",
+    bio: "Trina Skan is a results-driven leader known for her ability to build high-performing teams and scale revenue with precision, strategy, and heart. As Chief Sales Officer at Closer Secrets, she leads global sales strategy and execution across high-ticket client accounts, driving operational excellence, cross-functional alignment, and sustainable growth at scale. With over 20 years of experience spanning the public and private sectors — including specializing in Business Requirements, Innovation Procurement, Change Management and Continuous Improvement, Supply Chain, Technology Solutions, and Customer Experience — Trina has established a reputation for implementing data-driven systems that optimize performance and deliver consistent, measurable results. Her leadership style blends structure with empowerment, enabling teams to operate at a high level while maintaining a strong sense of ownership and accountability. Trina's journey is rooted in both discipline and curiosity. Born in Kingston, Ontario, she carries a deep appreciation for growth — personally and professionally — which shows up in her commitment to continuous improvement and excellence in execution. At her core, Trina is passionate about helping people and organizations reach their highest potential; creating impact not just through revenue, but through the strength and integrity of the team.",
+    highlights: ["20+ Years Experience", "Global Sales Strategy"],
   },
   {
     name: "Nicole Olazabal",
