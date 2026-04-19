@@ -6,10 +6,6 @@ import {
   Smile,
   Users,
   ArrowRight,
-  Linkedin,
-  Award,
-  Building,
-  GraduationCap,
 } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 
@@ -44,14 +40,6 @@ const team = [
     imagePosition: "center 20%",
     bio: "Trina Skan is a results-driven leader known for her ability to build high-performing teams and scale revenue with precision, strategy, and heart. As Chief Sales Officer at Closer Secrets, she leads global sales strategy and execution across high-ticket client accounts, driving operational excellence, cross-functional alignment, and sustainable growth at scale. With over 20 years of experience spanning the public and private sectors — including specializing in Business Requirements, Innovation Procurement, Change Management and Continuous Improvement, Supply Chain, Technology Solutions, and Customer Experience — Trina has established a reputation for implementing data-driven systems that optimize performance and deliver consistent, measurable results. Her leadership style blends structure with empowerment, enabling teams to operate at a high level while maintaining a strong sense of ownership and accountability. Trina's journey is rooted in both discipline and curiosity. Born in Kingston, Ontario, she carries a deep appreciation for growth — personally and professionally — which shows up in her commitment to continuous improvement and excellence in execution. At her core, Trina is passionate about helping people and organizations reach their highest potential; creating impact not just through revenue, but through the strength and integrity of the team.",
     highlights: ["20+ Years Experience", "Global Sales Strategy"],
-  },
-  {
-    name: "Nicole Olazabal",
-    role: "Operational Leadership",
-    image: "/team/nicole-olazabal.jpg",
-    imagePosition: "center 25%",
-    bio: "Based in North Texas, Nicole is passionate about leadership, growth, and helping people reach their full potential. She holds a Bachelor's in Business Technology Management and a Human Resources Certificate, and is currently pursuing her Master's in Organizational Leadership. At Closer Secrets, she focuses on connecting with and supporting the growth of sales professionals while partnering with top-tier clients on overall sales strategy — working closely with cross-functional teams to ensure alignment and drive meaningful impact.",
-    highlights: ["Organizational Leadership", "HR Certified"],
   },
   {
     name: "Val Ledezma",

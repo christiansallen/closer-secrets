@@ -15,8 +15,10 @@ import {
   Smile,
   Users,
   Star,
+  Quote,
 } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
+import WistiaVideo from "../components/WistiaVideo";
 
 const benefits = [
   {
@@ -45,6 +47,115 @@ const benefits = [
   },
 ];
 
+const teamTestimonials = [
+  {
+    quote:
+      "What I like the most about working with Closer Secrets is the opportunities that they have been able to provide for closers like myself, the type of people that they represent, the clients that they represent are really high-integrity, high value and the opportunities are just fantastic.",
+    name: null,
+    event: "Park City Retreat 2022",
+  },
+  {
+    quote:
+      "The competitive but very family oriented atmosphere and we all push each other to do our very best.",
+    name: "Matt E",
+    event: "Park City Retreat 2022",
+  },
+  {
+    quote:
+      "Everyone actually cares about each other's success, everybody wants each other to be successful.",
+    name: "Shawn K",
+    event: null,
+  },
+  {
+    quote: "The support is really unmatched.",
+    name: "Scott R",
+    event: null,
+  },
+  {
+    quote:
+      "Instead of it being like an actual corporation, it's like a family that comes together and supports each other a lot.",
+    name: null,
+    event: null,
+  },
+  {
+    quote:
+      "A lot of times with sales teams and sales people in general you get the negative connotation of 'just out there to make money' and one of the big things that I've noticed with our culture is about so much more than just making money.",
+    name: "Derek W",
+    event: "Las Vegas Retreat 2023",
+  },
+  {
+    quote: "It's just this free flow of gratitude.",
+    name: "Val M",
+    event: "Las Vegas Retreat 2023",
+  },
+  {
+    quote:
+      "Probably the best team building experience that I've ever had.",
+    name: "David F",
+    event: "Las Vegas Retreat 2023",
+  },
+  {
+    quote:
+      "The number one differentiator with Closer Secrets above any other sales agency, is the culture.",
+    name: "Deborah B",
+    event: "Las Vegas Retreat 2023",
+  },
+  {
+    quote:
+      "We know that if we can provide a work environment for people where they have freedom, they have some certainty and the culture is great we're going to have something special and I think that's what we've done.",
+    name: "Randall G",
+    event: "Las Vegas Retreat 2023",
+  },
+  {
+    quote:
+      "Closer Secrets is the first company that recognizes how important it is to have balance and harmony in your life. We still have trainings on just leveling up as a better human. And then you find that in that process, you become a better salesperson as well.",
+    name: null,
+    event: "2026",
+  },
+  {
+    quote:
+      "The culture, the people, the freedom. Having the freedom to be where we want, when we want, and putting up big numbers.",
+    name: "Grace O",
+    event: "2026",
+  },
+  {
+    quote:
+      "They care, and they're willing to invest in us and have a lot of fun doing it.",
+    name: "Adam D",
+    event: "2026",
+  },
+  {
+    quote:
+      "Leadership is incredible. The marketing is incredible. The protocol is incredible. We actually get to help people.",
+    name: "Clark H",
+    event: "2026",
+  },
+  {
+    quote:
+      "The amount of impact I'm having on the world right now, it's next to none.",
+    name: "Andy B",
+    event: "2026",
+  },
+];
+
+const retreatVideos = [
+  {
+    id: "1x7hdivy6r",
+    title: "Closer Secrets 2026",
+    label: "Latest",
+  },
+  {
+    id: "zc80wjzaqf",
+    title: "Las Vegas Retreat 2023",
+    label: null,
+  },
+  {
+    id: "emcr45ndxn",
+    title: "Park City Retreat 2022",
+    label: null,
+  },
+];
+
 const idealCandidate = [
   "You have a strong work ethic and a hunger to succeed",
   "You're coachable and eager to learn from the best",
@@ -60,6 +171,7 @@ export default function Careers() {
       <CareersHero />
       <BenefitsSection />
       <IdealCandidateSection />
+      <GreatPlaceToWork />
       <ApplicationSection />
     </main>
   );
@@ -230,6 +342,92 @@ function IdealCandidateSection() {
               ))}
             </div>
           </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function GreatPlaceToWork() {
+  return (
+    <section className="py-20 lg:py-28 bg-brand-charcoal/30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <SectionHeading
+          badge="Great Place to Work"
+          title="Hear It From Our Team"
+          subtitle="Our closers don't just work here — they thrive. Here's what they have to say about being part of the Closer Secrets family."
+        />
+
+        {/* Quote Grid */}
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+          {teamTestimonials.map((t, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: (i % 6) * 0.08 }}
+              className="break-inside-avoid bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] p-6 hover:border-brand-red/20 transition-all duration-300"
+            >
+              <Quote className="w-5 h-5 text-brand-red/40 mb-3" />
+              <p className="text-sm text-brand-gray leading-relaxed italic">
+                &ldquo;{t.quote}&rdquo;
+              </p>
+              {(t.name || t.event) && (
+                <div className="mt-4 flex items-center justify-between">
+                  {t.name && (
+                    <p className="text-xs font-semibold text-white">
+                      — {t.name}
+                    </p>
+                  )}
+                  {t.event && (
+                    <span className="text-[10px] uppercase tracking-wider text-brand-gray-dark bg-brand-black/40 px-2 py-0.5 rounded-full">
+                      {t.event}
+                    </span>
+                  )}
+                </div>
+              )}
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Retreat Videos */}
+        <div className="mt-20">
+          <h3 className="font-heading font-bold text-2xl text-white text-center mb-3">
+            Team Retreat Highlights
+          </h3>
+          <p className="text-sm text-brand-gray text-center mb-10 max-w-lg mx-auto">
+            Every year we bring the team together to connect, celebrate, and
+            level up — because culture isn&apos;t just a value, it&apos;s an
+            investment.
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {retreatVideos.map((video, i) => (
+              <motion.div
+                key={video.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] overflow-hidden hover:border-brand-red/20 transition-all duration-300"
+              >
+                <div className="aspect-video">
+                  <WistiaVideo videoId={video.id} className="w-full h-full" />
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                  <p className="text-sm font-semibold text-white">
+                    {video.title}
+                  </p>
+                  {video.label && (
+                    <span className="text-[10px] font-semibold uppercase tracking-wider bg-brand-emerald/10 text-brand-emerald border border-brand-emerald/20 px-2 py-0.5 rounded-full">
+                      {video.label}
+                    </span>
+                  )}
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
