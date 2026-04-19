@@ -11,11 +11,9 @@ import {
   Zap,
   BarChart3,
 } from "lucide-react";
-import TestimonialMarquee from "../components/TestimonialMarquee";
 import MetricCard from "../components/MetricCard";
 import SectionHeading from "../components/SectionHeading";
 import WistiaVideo from "../components/WistiaVideo";
-import { featuredLeaders } from "../data/testimonials";
 
 export default function Home() {
   return (
@@ -135,24 +133,6 @@ function HeroSection() {
               </Link>
             </p>
 
-            {/* Mini social proof */}
-            <div className="mt-8 flex items-center gap-4">
-              <div className="flex -space-x-2">
-                {featuredLeaders.slice(0, 4).map((leader) => (
-                  <img
-                    key={leader.name}
-                    src={leader.image}
-                    alt={leader.name}
-                    className="w-8 h-8 rounded-full border-2 border-brand-black object-cover"
-                    loading="lazy"
-                  />
-                ))}
-              </div>
-              <p className="text-xs text-brand-gray">
-                <span className="text-white font-semibold">Russell Brunson, Dean Graziosi</span>{" "}
-                & 50+ leaders trust us
-              </p>
-            </div>
           </motion.div>
 
           {/* Right: Wistia Sales Video */}
@@ -289,64 +269,55 @@ function ServicesSection() {
 
 
 function TransformationSection() {
+  const steps = [
+    {
+      step: "01",
+      title: "Discovery & Strategy",
+      desc: "We analyze your offer, market, and goals to design the perfect sales team structure.",
+    },
+    {
+      step: "02",
+      title: "Recruit & Deploy",
+      desc: "Our network of vetted closers means we can staff your team in as little as 14 days.",
+    },
+    {
+      step: "03",
+      title: "Train & Scale",
+      desc: "Ongoing coaching, performance tracking, and optimization to continuously grow revenue.",
+    },
+  ];
+
   return (
     <section className="py-20 lg:py-28 bg-brand-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <SectionHeading
-              badge="Game Plan"
-              title="From Hiring Headaches to a Scalable Sales Machine"
-              subtitle="Most businesses struggle with inconsistent sales. We fix that with a proven 3-step system."
-              align="left"
-            />
+        <SectionHeading
+          badge="Game Plan"
+          title="From Hiring Headaches to a Scalable Sales Machine"
+          subtitle="Most businesses struggle with inconsistent sales. We fix that with a proven 3-step system."
+        />
 
-            <div className="space-y-6">
-              {[
-                {
-                  step: "01",
-                  title: "Discovery & Strategy",
-                  desc: "We analyze your offer, market, and goals to design the perfect sales team structure.",
-                },
-                {
-                  step: "02",
-                  title: "Recruit & Deploy",
-                  desc: "Our network of vetted closers means we can staff your team in as little as 14 days.",
-                },
-                {
-                  step: "03",
-                  title: "Train & Scale",
-                  desc: "Ongoing coaching, performance tracking, and optimization to continuously grow revenue.",
-                },
-              ].map((item) => (
-                <motion.div
-                  key={item.step}
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="flex gap-4"
-                >
-                  <span className="font-heading font-bold text-2xl text-brand-red/30 shrink-0 w-10">
-                    {item.step}
-                  </span>
-                  <div>
-                    <h4 className="font-heading font-semibold text-white mb-1">
-                      {item.title}
-                    </h4>
-                    <p className="text-sm text-brand-gray leading-relaxed">
-                      {item.desc}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right side: scrolling testimonials */}
-          <div className="hidden lg:block">
-            <TestimonialMarquee />
-          </div>
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+          {steps.map((item, i) => (
+            <motion.div
+              key={item.step}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -4 }}
+              className="group bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] p-6 lg:p-8 hover:border-brand-red/20 transition-all duration-300 cursor-default"
+            >
+              <span className="font-heading font-bold text-4xl text-brand-red/20 group-hover:text-brand-red/40 transition-colors">
+                {item.step}
+              </span>
+              <h4 className="font-heading font-semibold text-lg text-white mt-4 mb-2">
+                {item.title}
+              </h4>
+              <p className="text-sm text-brand-gray leading-relaxed">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
