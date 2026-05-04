@@ -16,6 +16,8 @@ import {
   Users,
   Star,
   Quote,
+  Play,
+  X,
 } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 import WistiaVideo from "../components/WistiaVideo";
@@ -143,6 +145,12 @@ const retreatVideos = [
     id: "1x7hdivy6r",
     title: "Closer Secrets 2026",
     label: "Latest",
+  },
+  {
+    id: "tvzfbq7aho",
+    title: "Cruise Retreat 2025",
+    label: null,
+    vertical: true,
   },
   {
     id: "zc80wjzaqf",
@@ -349,6 +357,9 @@ function IdealCandidateSection() {
 }
 
 function GreatPlaceToWork() {
+  const [openVideoId, setOpenVideoId] = useState(null);
+  const openVideo = retreatVideos.find((v) => v.id === openVideoId);
+
   return (
     <section className="py-20 lg:py-28 bg-brand-charcoal/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -402,7 +413,7 @@ function GreatPlaceToWork() {
             investment.
           </p>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {retreatVideos.map((video, i) => (
               <motion.div
                 key={video.id}
@@ -412,9 +423,37 @@ function GreatPlaceToWork() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-brand-charcoal border border-white/5 rounded-[var(--radius-card)] overflow-hidden hover:border-brand-red/20 transition-all duration-300"
               >
-                <div className="aspect-video">
-                  <WistiaVideo videoId={video.id} className="w-full h-full" />
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setOpenVideoId(video.id)}
+                  className="aspect-video relative w-full bg-black overflow-hidden group"
+                  aria-label={`Play ${video.title}`}
+                >
+                  {video.vertical && (
+                    <img
+                      src={`https://fast.wistia.com/embed/medias/${video.id}/swatch`}
+                      alt=""
+                      aria-hidden="true"
+                      className="absolute inset-0 w-full h-full object-cover scale-110"
+                      style={{ filter: "blur(20px)" }}
+                    />
+                  )}
+                  <img
+                    src={`https://fast.wistia.com/embed/medias/${video.id}/swatch`}
+                    alt={video.title}
+                    className={
+                      video.vertical
+                        ? "absolute inset-0 m-auto h-full w-auto object-contain"
+                        : "absolute inset-0 w-full h-full object-cover"
+                    }
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors duration-300" />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-14 h-14 rounded-full bg-white/95 group-hover:bg-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                      <Play className="w-5 h-5 text-brand-charcoal ml-0.5 fill-current" />
+                    </div>
+                  </div>
+                </button>
                 <div className="p-4 flex items-center justify-between">
                   <p className="text-sm font-semibold text-white">
                     {video.title}
@@ -430,6 +469,37 @@ function GreatPlaceToWork() {
           </div>
         </div>
       </div>
+
+      {openVideo && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+          onClick={() => setOpenVideoId(null)}
+          role="dialog"
+          aria-modal="true"
+        >
+          <button
+            type="button"
+            onClick={() => setOpenVideoId(null)}
+            className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors"
+            aria-label="Close video"
+          >
+            <X className="w-5 h-5" />
+          </button>
+          <div
+            className={
+              openVideo.vertical
+                ? "relative h-full max-h-[90vh] aspect-[9/16] max-w-full"
+                : "relative w-full max-w-5xl aspect-video"
+            }
+            onClick={(e) => e.stopPropagation()}
+          >
+            <WistiaVideo
+              videoId={openVideo.id}
+              className="w-full h-full rounded-2xl overflow-hidden"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
